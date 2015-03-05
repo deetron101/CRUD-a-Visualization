@@ -1,0 +1,66 @@
+<main class="container-fluid" data-ng-controller="CrudController as crudCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<section>
+				<span class="opener pointer glyphicon glyphicon-edit" data-ng-click="crudCtrl.togglePanel()"></span>
+				<div class="toggle-panel" data-ng-show="crudCtrl.showPanel">
+					<span class="closer pointer glyphicon glyphicon-remove" data-ng-click="crudCtrl.togglePanel()"></span>
+					<h1>CRUD-a-Visualization!</h1>
+					<div class="center">
+						<button class="btn btn-default" data-ng-click="crudCtrl.loadDemoData()">Load Demo</button>
+					</div>
+					<h2>...or CRUD your own:</h2>
+					<form id="entryForm" name="entryForm" role="form" class="form" novalidate>
+						<div class="form-group color-inset">
+							<label class="sr-only" for="category">Category</label>
+							<input type="text" class="form-control" id="category" placeholder="Category" data-typeahead="item.group for item in crudCtrl.categoryColors" data-ng-model="crudCtrl.entry.category" typeahead-on-select="crudCtrl.syncColor()" maxlength="32" required />
+							<label class="sr-only" for="color">Color</label>
+							<button style="background-color: {{crudCtrl.entry.color}}" data-colorpicker="hex" data-colorpicker-position="left" data-ng-model="crudCtrl.entry.color"></button>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="entryContent">Description</label>
+							<input type="text" class="form-control" id="entryContent" placeholder="Description" data-ng-model="crudCtrl.entry.content" maxlength="140" required></input>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="entryContent">Date</label>
+							<input type="text" class="form-control" id="entryDate" placeholder="Date" data-ng-model="crudCtrl.entry.date" maxlength="32"></input>
+						</div>
+						<div class="form-group rating">
+							<label class="sr-only" for="rating">Rating</label>
+							<rating class="pointer" id="rating" data-ng-model="crudCtrl.entry.rating" data-max="crudCtrl.maxRating" data-on-hover="crudCtrl.hoveringOverStar(value)" data-on-leave="crudCtrl.overStar = null"></rating>
+						</div>
+						<div class="form-group center">
+							<button data-ng-show="crudCtrl.createState" data-ng-click="entryForm.$valid && crudCtrl.create()" type="button" class="btn btn-default">Add Item</button>
+							<button data-ng-show="!crudCtrl.createState" data-ng-click="entryForm.$valid && crudCtrl.update(crudCtrl.entry.id)" type="button" class="btn btn-default">Update Item</button>
+							<button data-ng-show="!crudCtrl.createState" data-ng-click="entryForm.$valid && crudCtrl.delete(crudCtrl.entry.id)" type="button" class="btn btn-default">Delete Item</button>
+							<button class="btn btn-default" data-ng-click="crudCtrl.clearForm()">Clear Form</button>
+							<button class="btn btn-default" data-ng-click="crudCtrl.clearAll()">Clear All</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-sm-12" >
+				<section data-ng-controller="VizController as vizCtrl" class="pointer">
+					<div id="visual" data-debounce-resize data-dr-width="vizCtrl.width" data-dr-interval="1000">
+					<div id="controls">
+						<select data-ng-model="crudCtrl.filter" data-ng-change="crudCtrl.filterDate(crudCtrl.items,crudCtrl.filter)" data-ng-show="crudCtrl.demoOn">
+							<option value="">All decades</option>
+  							<option value="195">1950s</option>
+  							<option value="196">1960s</option>
+  							<option value="197">1970s</option>
+  							<option value="198">1980s</option>
+  							<option value="199">1990s</option>
+  							<option value="200">2000s</option>
+  							<option value="201">2010s</option>
+						</select>
+						<colorlegend data-l-map="crudCtrl.categoryColors"></colorlegend>
+					</div>
+					<visualization id="my-visualization" data-v-width="{{vizCtrl.width}}" data-v-resize-action="vizCtrl.calcDimensions()" data-v-items="crudCtrl.filteredItems" data-v-props="crudCtrl.props" data-v-colormap="crudCtrl.categoryColors" data-v-sclick="crudCtrl.edit(id)" data-v-dclick="crudCtrl.delete(id,true)" data-v-reset="crudCtrl.clearForm"></visualization>
+				</section>	
+			</div>
+		</div>
+	</div> 
+</main>

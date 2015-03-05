@@ -1,0 +1,33 @@
+<form class="form-inline">
+	<div class="form-group">
+		<label class="sr-only" for="searchText">Search Text</label>
+		<input type="text" class="form-control" ng-model="searchText" id="searchText" placeholder="Search" ng-keyup="filter()" />
+	</div>
+<form>
+<table class="paginated-table table table-responsive">
+	<tbody>
+		<tr data-ng-repeat="item in filteredItems | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+			<td>{{item.content}}</td>
+			<td>{{item.category}}</td>
+		    <td>{{item.rating}}</td>
+		    <td><a href="#/edit/{{item.id}}">Edit</a></td>
+    	</tr>
+    </tbody>
+    <tfoot>
+      <td colspan="3">
+        <div class="pagination">
+          <ul>
+            <li ng-class="prevPageDisabled()">
+              <a ng-click="prevPage()">« Prev</a>
+            </li>
+            <li ng-repeat="n in range" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+              <a>{{n+1}}</a>
+            </li>
+            <li ng-class="nextPageDisabled()">
+              <a ng-click="nextPage()">Next »</a>
+            </li>
+          </ul>
+        </div>
+      </td>
+	</tfoot>
+</table>
