@@ -139,10 +139,10 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 
 		id=id+1;
 		crudCtrl.entry.id = id;
-    crudCtrl.items.push(crudCtrl.entry);
-    incrementCategoryColor(crudCtrl.entry.category, crudCtrl.entry.color);
-    crudCtrl.clearFilter();
-    crudCtrl.clearForm();
+    		crudCtrl.items.push(crudCtrl.entry);
+    		incrementCategoryColor(crudCtrl.entry.category, crudCtrl.entry.color);
+    		crudCtrl.clearFilter();
+    		crudCtrl.clearForm();
 	};
 
 	var getItem = function(id, callback) {
@@ -170,10 +170,10 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 
 		getItem(id, function(item){
 			$scope.$apply(function(){
-        		crudCtrl.entry = {"id": item.id, "category": item.category, "color": getColor(item.category), "content": item.content, "rating": item.rating, "date": item.date };
-        		crudCtrl.createState = false;
-        		crudCtrl.showPanel = true;
-        	});
+        			crudCtrl.entry = {"id": item.id, "category": item.category, "color": getColor(item.category), "content": item.content, "rating": item.rating, "date": item.date };
+        			crudCtrl.createState = false;
+        			crudCtrl.showPanel = true;
+        		});
 		});
 	};
 
@@ -181,7 +181,7 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 
 		getItem(id, function(item) {
 
-      decrementCategoryColor(item.category,item.color);
+      			decrementCategoryColor(item.category,item.color);
 			incrementCategoryColor(crudCtrl.entry.category,crudCtrl.entry.color);
 
 			item.id = crudCtrl.entry.id;
