@@ -59,6 +59,15 @@ p {
 	@include adjust-font-size-to(14px);
 }
 
+p.info-small {
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    span {
+        font-weight: bold;
+    }
+}
+
 form {
 	@include small-screen {
 		font-size: 10px;
