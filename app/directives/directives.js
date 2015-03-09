@@ -226,7 +226,7 @@ app.directive('visualization', function() {
     		    .attr("r", function(d) { return d.radius ; })
     		    .style("fill", function(d) { return scope.getColor(d.group ); })
     		    .on("click", function(d) {
-    		    	scope.sClick({"id":d.id});
+    		    	toggleLabel(svg.selectAll("text."+d.group));
     		    })
     		    .on("dblclick", function(d) {
     		    	scope.dClick({"id":d.id,"apply":true});
@@ -247,12 +247,12 @@ app.directive('visualization', function() {
       			.append("text")
       			.attr("y",function(d){ return d.y; })
       			.attr("x",function(d){ return d.x; })
-      			.attr("class", "node-label")
+      			.attr("class", function(d){ return "node-label "+d.group; })
       			.attr("text-anchor", "middle")
       			.call(force.drag);
 
       		textLabel.on("click", function(d) {
-      		  scope.sClick({"id":d.id});
+                toggleLabel(svg.selectAll("text."+d.group));
       		})
       		.on("dblclick", function(d) {
       		  scope.dClick({"id":d.id,"apply":true});
@@ -278,6 +278,16 @@ app.directive('visualization', function() {
     		});
 
     	}
+
+        function toggleLabel(selection) {
+
+            if (selection.style('opacity')==0) {
+                selection.style('opacity',1);
+            }
+            else {
+                selection.style('opacity',0);
+            }
+        }
 
       	function getNearestSpace(ind, string) {
 
@@ -429,7 +439,6 @@ app.directive('visualization', function() {
             items: '=vItems',
             filter: '=vFilter',
             colorMap: '=vColormap',
-            sClick: '&vSclick',
             dClick: '&vDclick',
             reset: '&vReset'
         },

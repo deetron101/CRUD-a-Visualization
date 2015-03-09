@@ -197,8 +197,8 @@ form {
 		padding-top: 60px;
 	}
 	.node-label {
-		display: none;
-		fill: #000;
+		opacity: 0;
+		fill: #fff;
 		font-size: 10px;
 		@include small-screen {
 			font-size: 9px;

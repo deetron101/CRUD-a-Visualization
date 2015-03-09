@@ -245,8 +245,8 @@ form .rating {
 }
 /* line 199, ../sass/style.scss */
 #visual .node-label {
-  display: none;
-  fill: #000;
+  opacity: 0;
+  fill: #fff;
   font-size: 10px;
 }
 @media only screen and (max-width: 767px) {
