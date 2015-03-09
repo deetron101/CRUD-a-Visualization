@@ -22,7 +22,7 @@ body {
      font-family: $font-stack-minor;
      font-weight: normal;
      color: $fg-color;
-} 
+}
 
 main {
 	position: relative;
@@ -46,7 +46,7 @@ h2 {
 	text-align: center;
 	font-size: 20px;
 	@include small-screen {
-		font-size: 18px;	
+		font-size: 18px;
 	}
 }
 
@@ -55,7 +55,7 @@ footer {
 	@include adjust-font-size-to(20px);
 }
 
-p { 
+p {
 	@include adjust-font-size-to(14px);
 }
 
@@ -133,7 +133,7 @@ form {
 	@include small-screen {
 		right: 5px;
 		top: 7px;
-		font-size: 22px;	
+		font-size: 22px;
 	}
 }
 
@@ -148,7 +148,7 @@ form {
 	@include small-screen {
 		right: 5px;
 		top: 8px;
-		font-size: 18px;	
+		font-size: 18px;
 	}
 }
 

@@ -8,13 +8,13 @@ app.controller("VizController", ['$scope', '$window', function($scope, $window){
   	}
 
   	vizCtrl.calcDimensions = function() {
-    	
+
     	var dims = {};
 
     	if (vizCtrl.width>1920) {
     		dims.height = 600;
     		dims.responsiveScale = 3.2;
-    	} 
+    	}
     	else if (vizCtrl.width>1020 && vizCtrl.width<=1919) {
     		dims.height = $window.innerHeight-40;
     		dims.responsiveScale = 3.2;
@@ -22,7 +22,7 @@ app.controller("VizController", ['$scope', '$window', function($scope, $window){
     	else if (vizCtrl.width>600 && vizCtrl.width<=1019) {
     		dims.height = $window.innerHeight-40;
     		dims.responsiveScale = 2.2;
-    	} 
+    	}
     	else {
     		dims.height = $window.innerHeight-40;
     		dims.responsiveScale = 1.4;
@@ -50,7 +50,7 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 		crudCtrl.showPanel = false;
 
 		crudCtrl.props =  {"group":"category", "label":"content", "radius":"rating", "scaling":radiusScaling};
-		
+
 		crudCtrl.items = [];
 		crudCtrl.categoryColors = [];
 
@@ -63,7 +63,7 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
   	}
 
   	var getColor = function(category) {
-		
+
 		var grp = null;
 		var catCols = crudCtrl.categoryColors;
 		var i = 0;
@@ -124,7 +124,7 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 	}
 
 	crudCtrl.syncColor = function() {
-		
+
 		var color = getColor(crudCtrl.entry.category);
 		if (color) {
 			crudCtrl.entry.color = color;
@@ -180,7 +180,7 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 	crudCtrl.update = function(id) {
 
 		getItem(id, function(item) {
-      
+
       decrementCategoryColor(item.category,item.color);
 			incrementCategoryColor(crudCtrl.entry.category,crudCtrl.entry.color);
 
@@ -250,8 +250,8 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 	};
 
 	crudCtrl.filterDate = function(items, filterText) {
-		
-		crudCtrl.filteredItems = $filter('filter')(items, { "date" : filterText });	
+
+		crudCtrl.filteredItems = $filter('filter')(items, { "date" : filterText });
 	};
 
 	crudCtrl.clearFilter = function() {

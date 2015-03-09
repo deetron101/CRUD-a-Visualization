@@ -135,7 +135,7 @@ app.directive('visualization', function() {
 
   var link = function(scope, elem, attrs) {
 
-  	var svg, circle, textLabel, clusters, nodes; 
+  	var svg, circle, textLabel, clusters, nodes;
   	var width, height, scaleFactor;
   	var maxRadius = 200;
   	var padding = 4;
@@ -161,7 +161,7 @@ app.directive('visualization', function() {
 	  }, true);
 
 	  scope.$watch('width', function(newVal,oldVal) {
-		
+
   		if (newVal !== oldVal) {
 
   			width = scope.width;
@@ -190,7 +190,7 @@ app.directive('visualization', function() {
   		svg.selectAll("text").remove();
 
   		nodes = scope.root.nodes;
-  			
+
   		for(var i=0; i<nodes.length; i++) {
   		  var node = nodes[i];
 		  	var g = node.group;
@@ -210,7 +210,7 @@ app.directive('visualization', function() {
 	    	.nodes({values: d3.nest()
 	      .key(function(d) { return d.group; })
 	      .entries(nodes)});
-        
+
   		var force = d3.layout.force()
 		    .nodes(nodes)
 		    .size([width, height])
@@ -225,10 +225,10 @@ app.directive('visualization', function() {
 		    .append("circle")
 		    .attr("r", function(d) { return d.radius ; })
 		    .style("fill", function(d) { return scope.getColor(d.group ); })
-		    .on("click", function(d) { 
+		    .on("click", function(d) {
 		    	scope.sClick({"id":d.id});
 		    })
-		    .on("dblclick", function(d) { 
+		    .on("dblclick", function(d) {
 		    	scope.dClick({"id":d.id,"apply":true});
 		    })
 		    .call(force.drag);
@@ -251,10 +251,10 @@ app.directive('visualization', function() {
   			.attr("text-anchor", "middle")
   			.call(force.drag);
 
-  		textLabel.on("click", function(d) { 
+  		textLabel.on("click", function(d) {
   		  scope.sClick({"id":d.id});
   		})
-  		.on("dblclick", function(d) { 
+  		.on("dblclick", function(d) {
   		  scope.dClick({"id":d.id,"apply":true});
   		});
 
@@ -276,7 +276,7 @@ app.directive('visualization', function() {
   				.attr("dy", split.dy);
   			}
 		  });
-		
+
 	  }
 
   	function getNearestSpace(ind, string) {
@@ -344,8 +344,8 @@ app.directive('visualization', function() {
   			len_right = label_right.length;
   		}
 
-  		return splits;	
-  	}		
+  		return splits;
+  	}
 
   	function tick(e) {
   	  circle
@@ -416,7 +416,7 @@ app.directive('visualization', function() {
   	    });
   	  };
   	}
-	 
+
   };
 
   return {
@@ -477,27 +477,27 @@ app.directive('ngPaginatedTable', function() {
 			$scope.range.push(i);
 		}
 	};
-	
+
 	$scope.prevPage = function() {
 		if ($scope.currentPage > 0) {
 			$scope.currentPage--;
 		}
 	};
-		
+
 	$scope.prevPageDisabled = function() {
 		return $scope.currentPage === 0 ? "disabled" : "";
 	};
-		
+
 	$scope.nextPage = function() {
 		if ($scope.currentPage < $scope.pageCount()-1) {
 			$scope.currentPage++;
 		}
 	};
-	
+
 	$scope.nextPageDisabled = function() {
 		return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
 	};
-	
+
 	$scope.setPage = function(n) {
 		$scope.currentPage = n;
 		$scope.pageRange();
@@ -507,10 +507,10 @@ app.directive('ngPaginatedTable', function() {
   var link = function(scope, elem, attrs) {
   	 scope.filteredItems = [];
   	 scope.init();
-  	 scope.$watch('items', function(newVal,oldVal) { 
+  	 scope.$watch('items', function(newVal,oldVal) {
 	 	if (newVal.length>0) {
 	 		scope.init();
-	    }     
+	    }
      });
   }
 
@@ -541,8 +541,8 @@ app.directive('debounceResize', ['$window', '$debounce', function($window, $debo
         	$debounce(scope.onResize, scope.interval);
         });
 
-        scope.width = elem[0].clientWidth; 
-        
+        scope.width = elem[0].clientWidth;
+
     };
 
     return {

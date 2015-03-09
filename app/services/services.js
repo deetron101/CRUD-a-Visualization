@@ -41,47 +41,47 @@ app.service('oscars', function() {
 			{"id":37, "category":"Drama", "content":"The Deer Hunter", "rating":5, "date":"1978"},
 			{"id":38, "category":"Action", "content":"The French Connection", "rating":5, "date":"1971"},
 			{"id":39, "category":"Action", "content":"Gladiator", "rating":5, "date":"2000"},
-			{"id":40, "category":"Drama", "content":"How Green Was My Valley", "rating":5, "date":"1941"},	
-			{"id":41, "category":"Comedy", "content":"In the Heat of the Night", "rating":5, "date":"1967"},	
-			{"id":42, "category":"Comedy", "content":"It Happened One Night", "rating":5, "date":"1934"},	
-			{"id":43, "category":"Drama", "content":"Kramer vs. Kramer", "rating":5, "date":"1979"},	
-			{"id":44, "category":"Musical", "content":"Oliver!", "rating":5, "date":"1968"},	
-			{"id":45, "category":"Drama", "content":"One Flew Over the Cuckoo's Nest", "rating":5, "date":"1975"},	
-			{"id":46, "category":"Thriller", "content":"The Silence of the Lambs", "rating":5, "date":"1991"},	
-			{"id":47, "category":"Biography", "content":"The Sound of Music", "rating":5, "date":"1965"},	
-			{"id":48, "category":"Comedy", "content":"Terms of Endearment", "rating":5, "date":"1983"},	
+			{"id":40, "category":"Drama", "content":"How Green Was My Valley", "rating":5, "date":"1941"},
+			{"id":41, "category":"Comedy", "content":"In the Heat of the Night", "rating":5, "date":"1967"},
+			{"id":42, "category":"Comedy", "content":"It Happened One Night", "rating":5, "date":"1934"},
+			{"id":43, "category":"Drama", "content":"Kramer vs. Kramer", "rating":5, "date":"1979"},
+			{"id":44, "category":"Musical", "content":"Oliver!", "rating":5, "date":"1968"},
+			{"id":45, "category":"Drama", "content":"One Flew Over the Cuckoo's Nest", "rating":5, "date":"1975"},
+			{"id":46, "category":"Thriller", "content":"The Silence of the Lambs", "rating":5, "date":"1991"},
+			{"id":47, "category":"Biography", "content":"The Sound of Music", "rating":5, "date":"1965"},
+			{"id":48, "category":"Comedy", "content":"Terms of Endearment", "rating":5, "date":"1983"},
 			{"id":49, "category":"Comedy", "content":"Annie Hall", "rating":4, "date":"1977"},
 			{"id":50, "category":"Biography", "content":"A Beautiful Mind", "rating":4, "date":"2001"},
-			{"id":51, "category":"Comedy", "content":"Chariots of Fire", "rating":4, "date":"1981"},	
-			{"id":52, "category":"Comedy", "content":"The Departed", "rating":4, "date":"2006"},	
-			{"id":53, "category":"Comedy", "content":"Driving Miss Daisy", "rating":4, "date":"1989"},	
-			{"id":54, "category":"Musical", "content":"Hamlet", "rating":4, "date":"1948"},	
-			{"id":55, "category":"Biography", "content":"The King's Speech", "rating":4, "date":"2010"},	
-			{"id":56, "category":"Drama", "content":"The Lost Weekend", "rating":4, "date":"1945"},	
-			{"id":57, "category":"Romance", "content":"Marty", "rating":4, "date":"1955"},	
-			{"id":58, "category":"Drama", "content":"Million Dollar Baby", "rating":4, "date":"2004"},	
+			{"id":51, "category":"Comedy", "content":"Chariots of Fire", "rating":4, "date":"1981"},
+			{"id":52, "category":"Comedy", "content":"The Departed", "rating":4, "date":"2006"},
+			{"id":53, "category":"Comedy", "content":"Driving Miss Daisy", "rating":4, "date":"1989"},
+			{"id":54, "category":"Musical", "content":"Hamlet", "rating":4, "date":"1948"},
+			{"id":55, "category":"Biography", "content":"The King's Speech", "rating":4, "date":"2010"},
+			{"id":56, "category":"Drama", "content":"The Lost Weekend", "rating":4, "date":"1945"},
+			{"id":57, "category":"Romance", "content":"Marty", "rating":4, "date":"1955"},
+			{"id":58, "category":"Drama", "content":"Million Dollar Baby", "rating":4, "date":"2004"},
 			{"id":59, "category":"Crime", "content":"No Country for Old Men", "rating":4, "date":"2007"},
 			{"id":60, "category":"Drama", "content":"Ordinary People", "rating":4, "date":"1980"},
-			{"id":61, "category":"Drama", "content":"Platoon", "rating":4, "date":"1986"},	
+			{"id":61, "category":"Drama", "content":"Platoon", "rating":4, "date":"1986"},
 			{"id":62, "category":"Drama", "content":"Rain Man", "rating":4, "date":"1988"},
-			{"id":63, "category":"Adventure", "content":"Tom Jones", "rating":4, "date":"1963"},	
+			{"id":63, "category":"Adventure", "content":"Tom Jones", "rating":4, "date":"1963"},
 			{"id":64, "category":"Western", "content":"Unforgiven", "rating":4, "date":"1992"},
-			{"id":65, "category":"Biography", "content":"12 Years a Slave", "rating":3, "date":"2013"},	
-			{"id":66, "category":"Drama", "content":"All the King's Men", "rating":3, "date":"1949"},	
-			{"id":67, "category":"Romance", "content":"Casablanca", "rating":3, "date":"1943"},	
-			{"id":68, "category":"Romance", "content":"Cavalcade", "rating":3, "date":"1933"},	
+			{"id":65, "category":"Biography", "content":"12 Years a Slave", "rating":3, "date":"2013"},
+			{"id":66, "category":"Drama", "content":"All the King's Men", "rating":3, "date":"1949"},
+			{"id":67, "category":"Romance", "content":"Casablanca", "rating":3, "date":"1943"},
+			{"id":68, "category":"Romance", "content":"Cavalcade", "rating":3, "date":"1933"},
 			{"id":69, "category":"Western", "content":"Cimarron", "rating":3, "date":"1931"},
 			{"id":70, "category":"Drama", "content":"Crash", "rating":3, "date":"2005"},
-			{"id":71, "category":"Romance", "content":"Gentleman's Agreement", "rating":3, "date":"1947"},	
+			{"id":71, "category":"Romance", "content":"Gentleman's Agreement", "rating":3, "date":"1947"},
 			{"id":72, "category":"Crime", "content":"The Godfather", "rating":3, "date":"1972"},
-			{"id":73, "category":"Biography", "content":"The Great Ziegfeld", "rating":3, "date":"1936"},	
+			{"id":73, "category":"Biography", "content":"The Great Ziegfeld", "rating":3, "date":"1936"},
 			{"id":74, "category":"Biography", "content":"The Life of Emile Zola", "rating":3, "date":"1937"},
-			{"id":75, "category":"Drama", "content":"Midnight Cowboy", "rating":3, "date":"1969"},	
+			{"id":75, "category":"Drama", "content":"Midnight Cowboy", "rating":3, "date":"1969"},
 			{"id":76, "category":"Drama", "content":"Rocky", "rating":3, "date":"1976"},
 			{"id":77, "category":"Drama", "content":"All Quiet on the Western Front", "rating":2, "date":"1930"},
-			{"id":78, "category":"Romance", "content":"The Greatest Show on Earth", "rating":2, "date":"1952"},	
+			{"id":78, "category":"Romance", "content":"The Greatest Show on Earth", "rating":2, "date":"1952"},
 			{"id":79, "category":"Thriller", "content":"Rebecca", "rating":2, "date":"1940"},
-			{"id":80, "category":"Romance", "content":"Wings", "rating":2, "date":"1927"},	
+			{"id":80, "category":"Romance", "content":"Wings", "rating":2, "date":"1927"},
 			{"id":81, "category":"Comedy", "content":"You Can't Take It with You", "rating":2, "date":"1938"},
 			{"id":82, "category":"Musical", "content":"The Broadway Melody", "rating":1, "date":"1929"},
 			{"id":83, "category":"Romance", "content":"Grand Hotel", "rating":1, "date":"1932"},
@@ -99,8 +99,8 @@ app.service('oscars', function() {
 			{"group": "Western", "color": "#F39C12", "count": 0},
 			{"group": "Musical", "color": "#DC143C", "count": 0},
 			{"group": "Comedy", "color": "#FE5800", "count": 0}
-			
-	]; 
+
+	];
 
 	var countColors = function() {
 		var i, j;
@@ -141,7 +141,7 @@ app.filter('offset', function() {
 // http://unscriptable.com/2009/03/20/debouncing-javascript-methods/
 // adapted from angular's $timeout code
 app.factory('$debounce', ['$rootScope', '$browser', '$q', '$exceptionHandler', function($rootScope,   $browser,   $q,   $exceptionHandler) {
-        
+
   var deferreds = {},
       methods = {},
       uuid = 0;
@@ -212,5 +212,5 @@ app.factory('$debounce', ['$rootScope', '$browser', '$q', '$exceptionHandler', f
   };
 
   return debounce;
-  
+
 }]);
