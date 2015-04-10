@@ -1,3 +1,6 @@
+/*
+* Service for Oscar-related demo data
+*/
 app.service('oscars', function() {
 
 	var items = [
@@ -102,6 +105,7 @@ app.service('oscars', function() {
 
 	];
 
+  /* Counts the number of items of each color */
 	var countColors = function() {
 		var i, j;
 		var len = items.length;
@@ -121,16 +125,19 @@ app.service('oscars', function() {
 
 	countColors();
 
+  /* Returns the items */
 	this.getItems = function() {
 		return angular.copy(items);
 	};
 
+  /* Returns the color vector */
 	this.getColors = function() {
 		return angular.copy(colors);
 	};
 
 });
 
+/* Offset filter for pagination */
 app.filter('offset', function() {
 	return function(input, start) {
 		start = parseInt(start, 10);
