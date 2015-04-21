@@ -1,49 +1,4 @@
 /*
-* Controller for the Vizualization container
-*/
-app.controller("VizController", ['$scope', '$window', function($scope, $window){
-
-	var vizCtrl = this;
-
-	var init = function(){
-		vizCtrl.width = null;
-  }
-
-  init();
-
-  /*
-  * Sets dimensions and responsive scaling factor based on the with of the vizualization
-  */
-  vizCtrl.calcDimensions = function() {
-
-    var dims = {};
-
-    // Large screen
-  	if (vizCtrl.width>1920) {
-  		dims.height = 600;
-  		dims.responsiveScale = 3.2;
-  	}
-    // Medium screen
-  	else if (vizCtrl.width>1020 && vizCtrl.width<=1919) {
-  		dims.height = $window.innerHeight-40;
-  		dims.responsiveScale = 3.2;
-  	}
-    // Small/Medium
-  	else if (vizCtrl.width>600 && vizCtrl.width<=1019) {
-  		dims.height = $window.innerHeight-40;
-  		dims.responsiveScale = 2.2;
-  	}
-    // Small mobile screen
-  	else {
-  		dims.height = $window.innerHeight-40;
-  		dims.responsiveScale = 1.4;
-  	}
-    return dims;
-  };
-
-} ]);
-
-/*
 * Controller for CRUD operations
 */
 app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scope, $filter, oscars){
@@ -295,23 +250,6 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 	};
 
   /*
-  * Load the Oscar-related demo data
-  */
-	crudCtrl.loadDemoData = function() {
-
-    // Get the data
-		crudCtrl.categoryColors = oscars.getColors();
-		crudCtrl.items = oscars.getItems();
-		var len = crudCtrl.items.length;
-		id = crudCtrl.items[len-1].id;
-
-		crudCtrl.demoOn = true;
-
-		crudCtrl.clearFilter();
-		crudCtrl.clearForm();
-	};
-
-  /*
   * Clear all current items
   */
 	crudCtrl.clearAll = function() {
@@ -325,10 +263,26 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 	};
 
   /*
+  * Load the Oscar-related demo data
+  */
+  crudCtrl.loadDemoData = function() {
+
+    // Get the data
+    crudCtrl.categoryColors = oscars.getColors();
+    crudCtrl.items = oscars.getItems();
+    var len = crudCtrl.items.length;
+    id = crudCtrl.items[len-1].id;
+
+    crudCtrl.demoOn = true;
+
+    crudCtrl.clearFilter();
+    crudCtrl.clearForm();
+  };
+
+  /*
   * Filter items by date
   */
 	crudCtrl.filterDate = function(items, filterText) {
-
 		crudCtrl.filteredItems = $filter('filter')(items, { "date" : filterText });
 	};
 
@@ -342,5 +296,50 @@ app.controller("CrudController", [ '$scope', '$filter', 'oscars', function($scop
 	}
 
   init();
+
+} ]);
+
+/*
+* Controller for the Vizualization container
+*/
+app.controller("VizController", ['$scope', '$window', function($scope, $window){
+
+  var vizCtrl = this;
+
+  var init = function(){
+    vizCtrl.width = null;
+  }
+
+  init();
+
+  /*
+  * Sets dimensions and responsive scaling factor based on the with of the vizualization
+  */
+  vizCtrl.calcDimensions = function() {
+
+    var dims = {};
+
+    // Large screen
+    if (vizCtrl.width>1920) {
+      dims.height = 600;
+      dims.responsiveScale = 3.2;
+    }
+    // Medium screen
+    else if (vizCtrl.width>1020 && vizCtrl.width<=1919) {
+      dims.height = $window.innerHeight-40;
+      dims.responsiveScale = 3.2;
+    }
+    // Small/Medium
+    else if (vizCtrl.width>600 && vizCtrl.width<=1019) {
+      dims.height = $window.innerHeight-40;
+      dims.responsiveScale = 2.2;
+    }
+    // Small mobile screen
+    else {
+      dims.height = $window.innerHeight-40;
+      dims.responsiveScale = 1.4;
+    }
+    return dims;
+  };
 
 } ]);

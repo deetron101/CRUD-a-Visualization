@@ -3,11 +3,6 @@
 
 @include font-face("Junction", font-files("Junction.otf"));
 $font-stack-special: "Junction", Arial, sans-serif;
-$font-stack-minor: "Junction", Arial, sans-serif;
-
-$base-font-size: 12px;
-$base-line-height: 18px;
-@include establish-baseline;
 
 $bg-color: #000;
 $viz-bg-color: #000;

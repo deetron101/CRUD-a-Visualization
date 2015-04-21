@@ -232,7 +232,7 @@ app.directive('visualization', function() {
         // Needed for responsive scaling
         node.radius = node.radius2*scaleFactor;
         var r = node.radius;
-        // Arrange into clusters by radius
+        // Arrange into clusters by group, and the largest node is the cluster center
         var cluster = clusters[g];
         if (!cluster || (r > cluster.radius)) {
           clusters[g] = node;
@@ -356,9 +356,9 @@ app.directive('visualization', function() {
           .attr("y", d.y)
           .attr("dy", split.dy);
         }
-    });
+      });
 
-  }
+    }
 
     /*
     * Toggle the label of a selected circle/node
@@ -547,6 +547,20 @@ app.directive('visualization', function() {
 });
 
 /*
+* Small directive for creating the vizualisation color legend
+*/
+app.directive('colorlegend', function() {
+  return {
+    restrict: 'EA',
+    scope: {
+        items: '=lMap',
+      },
+      templateUrl: 'app/directives/templates/colorLegend.html',
+      replace: true
+  }
+});
+
+/*
 * Small directive for detecting window resizes with debounce
 */
 app.directive('debounceResize', ['$window', '$debounce', function($window, $debounce) {
@@ -578,20 +592,6 @@ app.directive('debounceResize', ['$window', '$debounce', function($window, $debo
   }
 
 } ]);
-
-/*
-* Small directive for creating the vizualisation color legend
-*/
-app.directive('colorlegend', function() {
-  return {
-    restrict: 'EA',
-    scope: {
-        items: '=lMap',
-      },
-      templateUrl: 'app/directives/templates/colorLegend.html',
-      replace: true
-  }
-});
 
 /*
 * Small directive for preventing the bubbling of events in the visualization

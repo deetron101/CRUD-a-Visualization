@@ -1,15 +1,24 @@
 <main class="container-fluid" data-ng-controller="CrudController as crudCtrl">
+
 	<div class="row">
 		<div class="col-md-12">
+
 			<section>
+
 				<span class="opener pointer glyphicon glyphicon-edit" data-ng-click="crudCtrl.togglePanel()"></span>
+
 				<div class="toggle-panel" data-ng-show="crudCtrl.showPanel">
+
 					<span class="closer pointer glyphicon glyphicon-remove" data-ng-click="crudCtrl.togglePanel()"></span>
+
 					<h1>CRUD-a-Visualization!</h1>
-					<div class="center">
+
+          <div class="center">
 						<button class="btn btn-default" data-ng-click="crudCtrl.loadDemoData()">Load Demo</button>
 					</div>
+
 					<h2>...or CRUD your own:</h2>
+
 					<form id="entryForm" name="entryForm" role="form" class="form" novalidate>
 						<div class="form-group color-inset">
 							<label class="sr-only" for="category">Category</label>
@@ -37,31 +46,40 @@
 							<button class="btn btn-default" data-ng-click="crudCtrl.clearAll()">Clear All</button>
 						</div>
 					</form>
-                    <p class="info-small"><span>HINT:</span> Single click for labels, double click to CRUD</p>
+          <p class="info-small"><span>HINT:</span> Single click for labels, double click to CRUD</p>
+
 				</div>
+
 			</section>
+
 		</div>
 	</div>
+
 	<div class="row">
-			<div class="col-sm-12" >
-				<section data-ng-controller="VizController as vizCtrl" class="pointer">
-					<div id="visual" data-debounce-resize data-dr-width="vizCtrl.width" data-dr-interval="1000">
-					<div id="controls">
-						<select data-ng-model="crudCtrl.filter" data-ng-change="crudCtrl.filterDate(crudCtrl.items,crudCtrl.filter)" data-ng-show="crudCtrl.demoOn">
-							<option value="">All decades</option>
-  							<option value="195">1950s</option>
-  							<option value="196">1960s</option>
-  							<option value="197">1970s</option>
-  							<option value="198">1980s</option>
-  							<option value="199">1990s</option>
-  							<option value="200">2000s</option>
-  							<option value="201">2010s</option>
-						</select>
-						<colorlegend data-l-map="crudCtrl.categoryColors"></colorlegend>
-					</div>
-					<visualization id="my-visualization" data-v-width="{{vizCtrl.width}}" data-v-resize-action="vizCtrl.calcDimensions()" data-v-items="crudCtrl.filteredItems" data-v-props="crudCtrl.props" data-v-colormap="crudCtrl.categoryColors" data-v-dclick="crudCtrl.edit(id,true)" data-v-reset="crudCtrl.clearForm"></visualization>
-				</section>
-			</div>
+		<div class="col-sm-12" >
+
+			<section data-ng-controller="VizController as vizCtrl" class="pointer">
+
+        <div id="visual" data-debounce-resize data-dr-width="vizCtrl.width" data-dr-interval="1000">
+  				<div id="controls">
+  					<select data-ng-model="crudCtrl.filter" data-ng-change="crudCtrl.filterDate(crudCtrl.items,crudCtrl.filter)" data-ng-show="crudCtrl.demoOn">
+  						<option value="">All decades</option>
+							<option value="195">1950s</option>
+							<option value="196">1960s</option>
+							<option value="197">1970s</option>
+							<option value="198">1980s</option>
+							<option value="199">1990s</option>
+							<option value="200">2000s</option>
+							<option value="201">2010s</option>
+  					</select>
+  					<colorlegend data-l-map="crudCtrl.categoryColors"></colorlegend>
+  				</div>
+  				<visualization id="my-visualization" data-v-width="{{vizCtrl.width}}" data-v-resize-action="vizCtrl.calcDimensions()" data-v-items="crudCtrl.filteredItems" data-v-props="crudCtrl.props" data-v-colormap="crudCtrl.categoryColors" data-v-dclick="crudCtrl.edit(id,true)" data-v-reset="crudCtrl.clearForm"></visualization>
+        </div>
+
+			</section>
+
 		</div>
 	</div>
+
 </main>
